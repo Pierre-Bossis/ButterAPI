@@ -21,6 +21,7 @@ namespace Butter.DataAccess.Configs
                    .IsRequired()
                    .HasColumnType("nvarchar")
                    .HasMaxLength(250);
+            builder.HasIndex(u => u.NickName).IsUnique();
 
             builder.Property(u => u.Password)
                 .IsRequired()

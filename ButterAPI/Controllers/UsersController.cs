@@ -1,5 +1,6 @@
 ﻿using Butter.Models;
 using Butter.Repositories.Interfaces;
+using ButterAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +35,7 @@ namespace ButterAPI.Controllers
         {
             var user = _repo.GetById(id);
 
-            if(user is not null)
+            if (user is not null)
             {
                 return Ok(user);
             }
@@ -47,18 +48,43 @@ namespace ButterAPI.Controllers
         public IActionResult Create([FromBody] UserModel model)
         {
             var user = _repo.Add(model);
-
-            return Created($"https://localhost:7199/{user.UserId}",user);
+            if (user is not null)
+            {
+                return Created($"https://localhost:7199/{user.UserId}", user);
+            }
+            else
+            {
+                return BadRequest("Nickname Already used.");
+            }
         }
 
         [HttpDelete]
         [Route("Delete/{id:int}")]
         public IActionResult Delete(int id)
         {
-            if(id != 0)
+            if (id != 0)
             {
                 _repo.Delete(id);
                 return Ok();
+            }
+            return NotFound();
+        }
+
+        [HttpPut]
+        [Route("Update/{id:int}")]
+        public IActionResult Update([FromBody] UserUpdate model)
+        {
+            if (model is not null)
+            {
+                var user = _repo.Update(model);
+                if (user is not null)
+                {
+                    return Created($"https://localhost:7199/{user.UserId}", user);
+                }
+                else
+                {
+                    return BadRequest("Nickname Already used.");
+                }
             }
             return NotFound();
         }

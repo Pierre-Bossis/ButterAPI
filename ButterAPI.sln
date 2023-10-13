@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButterAPI", "ButterAPI\ButterAPI.csproj", "{3D6956E4-602A-4DAB-836F-E94A58089B77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterAPI", "ButterAPI\ButterAPI.csproj", "{3D6956E4-602A-4DAB-836F-E94A58089B77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{76DDB1C6-A727-4D18-BA64-66E4AB630407}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{864FFC89-04C4-4F94-8EBD-D6878E617BB8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{36760E2A-B0BA-434B-9C62-75CC84C5AED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButterAPI.Models", "ButterAPI.Models\ButterAPI.Models.csproj", "{BD757EA5-20F6-47D7-A453-4E72F30B148B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterAPI.Models", "ButterAPI.Models\ButterAPI.Models.csproj", "{BD757EA5-20F6-47D7-A453-4E72F30B148B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButterAPI.DataAccess", "ButterAPI.DataAccess\ButterAPI.DataAccess.csproj", "{7FFE2A73-FB8D-4C81-B9AF-98E671B74E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterAPI.DataAccess", "ButterAPI.DataAccess\ButterAPI.DataAccess.csproj", "{7FFE2A73-FB8D-4C81-B9AF-98E671B74E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButterAPI.Entities", "ButterAPI.Entities\ButterAPI.Entities.csproj", "{BDB1E065-D6E5-477A-9C05-9212FA5A9B85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterAPI.Entities", "ButterAPI.Entities\ButterAPI.Entities.csproj", "{BDB1E065-D6E5-477A-9C05-9212FA5A9B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButterAPI.Repositories", "ButterAPI.Repositories\ButterAPI.Repositories.csproj", "{519D03FD-69CC-4D62-8F01-C0D4D6B6D02B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterAPI.Repositories", "ButterAPI.Repositories\ButterAPI.Repositories.csproj", "{519D03FD-69CC-4D62-8F01-C0D4D6B6D02B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

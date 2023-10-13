@@ -1,6 +1,7 @@
 ﻿using Butter.DataAccess;
 using Butter.Models;
 using Butter.Repositories.Interfaces;
+using ButterAPI.Models;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Butter.Repositories
     /// </summary>
     /// <typeparam name="T">Le type d'entité</typeparam>
     /// <typeparam name="U">Le type de la PK dans la DB</typeparam>
-    public abstract class BaseRepository<M,T, U> : IRepo<M,T, U>
+    public abstract class BaseRepository<M,T, U,UU> : IRepo<M,T, U,UU>
         where T:class         
     {
          
@@ -86,17 +87,21 @@ namespace Butter.Repositories
         /// Permet de mettre à jour une entité
         /// </summary>
         /// <param name="item">L'entité a mettre à jour</param>
-        public void Update(M item)
+        public virtual UU Update(UU item)
         {
             
             //2 MAJ mon item dans le dbset correspondant
-            _ctx.Set<T>().Update(ToEntite(item));
+            _ctx.Set<T>().Update(UserUpdateToEntite(item));
             //3 Save
             _ctx.SaveChanges();
+
+            return ToModelUpdate(_ctx.Set<T>().Find(item));
         }
 
 
         public abstract M ToModel(T entite);
         public abstract T ToEntite(M model);
+        public abstract UU ToModelUpdate(T entite);
+        public abstract T UserUpdateToEntite(UU modelupdate);
     }
 }
